@@ -11,15 +11,18 @@ interface ErrorResponse {
   status: number;
   error: string;
   message: string;
-  timestamp?: string;
+  timestamp?: string; // timestamp is optional based on your Java ErrorResponse
 }
 
 function App() {
   const [inputText, setInputText] = useState<string>('');
   const [translatedText, setTranslatedText] = useState<string>('');
+  const handleTranslate = async () => {
+   
+  };
 
   return (
-      <div className="App">
+    <div className="App">
       <h1>Georgian to English Translator</h1>
       <div className="input-section">
         <textarea
@@ -27,7 +30,7 @@ function App() {
           value={inputText}
           onChange={(e) => setInputText(e.target.value)}
         ></textarea>
-        <button>
+        <button onClick={handleTranslate}>
           Translate
         </button>
       </div>
